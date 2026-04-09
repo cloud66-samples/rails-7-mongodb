@@ -1,0 +1,27 @@
+development:
+  clients:
+    default:
+      database: myapp_development
+      hosts:
+        - <%= ENV.fetch("MONGODB_HOST", "127.0.0.1:27017") %>
+      options:
+        server_selection_timeout: 5
+
+test:
+  clients:
+    default:
+      database: myapp_test
+      hosts:
+        - <%= ENV.fetch("MONGODB_HOST", "127.0.0.1:27017") %>
+      options:
+        server_selection_timeout: 5
+        read:
+          mode: :primary
+        max_pool_size: 1
+
+production:
+  clients:
+    default:
+      uri: <%= ENV["MONGODB_URI"] %>
+      options:
+        server_selection_timeout: 5
