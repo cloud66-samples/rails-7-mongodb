@@ -27,7 +27,8 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 # For pagination
-gem "will_paginate"
+gem "kaminari", "~> 1.2", ">= 1.2.2"
+gem "kaminari-mongoid", "~> 1.0", ">= 1.0.2"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
